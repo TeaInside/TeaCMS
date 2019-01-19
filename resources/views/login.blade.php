@@ -10,7 +10,7 @@
         <title></title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
 
         <!-- Custom styles for this template -->
         <link href="/css/signin.css" rel="stylesheet">
@@ -32,5 +32,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>
+
+        <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
     </body>
 </html>
