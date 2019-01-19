@@ -16,7 +16,7 @@ class CreateSocialMediaTable extends Migration
         Schema::create('social_media', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('username', 32);
             $table->enum('type', 
                 [
@@ -29,13 +29,10 @@ class CreateSocialMediaTable extends Migration
                 ]
             );
             $table->timestamps();
+        });
 
-            $table
-                ->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('casecade')
-                ->onUpdate('casecade');
+        Schema::table('social_media', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
