@@ -9,6 +9,7 @@ if (! function_exists("error_api")) {
 	 */
 	function error_api($message, int $httpCode = 400): void
 	{
+		header("Content-Type: application/json");
 		http_response_code($httpCode);
 		print json_encode($message, JSON_UNESCAPED_SLASHES);
 		exit;

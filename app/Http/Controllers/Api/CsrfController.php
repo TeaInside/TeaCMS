@@ -13,17 +13,12 @@ class CsrfController extends Controller
      */
     public function getCsrf(): JsonResponse
     {
-
-        // 1 hour
-        $expired = time() + 3600;
-
         return response()->json(
             [
-                "expired" => $expired,
                 "token" => cencrypt(json_encode(
                     [
                         "code" => rstr(32),
-                        "expired" => $expired
+                        "logged_in_at" => time()
                     ]
                 ), env("APP_KEY"))
             ]
@@ -35,6 +30,14 @@ class CsrfController extends Controller
      */
     public function validateCsrf(): bool
     {
-        return true;
+
+        if (isset($_POST["_token"])) {
+            $token = json_decode(dencrypt($_POST["_token"], env("APP_KEY")), true);
+            if (isset($token["logged_in_at"]) && (($token["logged_in_at"]+3600) > time())) {
+                return true;
+            }
+        }
+        
+        return error_api("Token mismatch", 400);
     }
 }

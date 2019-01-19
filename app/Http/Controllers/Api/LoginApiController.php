@@ -10,17 +10,10 @@ use App\Http\Controllers\Controller;
 class LoginApiController extends Controller
 {
 	/**
-     * @return \Illuminate\Http\JsonResponse
-     */
-	public function login(): JsonResponse
+	 * @return void
+	 */
+	private function validateLoginInput(): void
 	{
-		
-		$res = [
-			"status" => "login_failed",
-			"token_session" => null,
-			"message" => "Unknown error"
-		];
-
 		if (!isset($_POST["_token"], $_POST["email"], $_POST["password"])) {
 			error_api("Invalid parameter", 400);
 		}
@@ -28,7 +21,20 @@ class LoginApiController extends Controller
 		if (!(is_string($_POST["_token"]) && is_string($_POST["email"]) && is_string($_POST["password"]))) {
 			error_api("Invalid parameter", 400);
 		}
+	}
 
+	/**
+     * @return \Illuminate\Http\JsonResponse
+     */
+	public function login(): JsonResponse
+	{
+		$this->validateLoginInput();
+
+		$res = [
+			"status" => "login_failed",
+			"token_session" => null,
+			"message" => "Unknown error"
+		];
 
 		if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 			$where = ["email", "LIKE", strtolower($_POST["email"])];

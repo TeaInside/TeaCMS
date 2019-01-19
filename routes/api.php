@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Middleware\ApiCsrf;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("/get_token", "Api\\LoginApiController@getToken");
 Route::get("/get_csrf", "Api\\CsrfController@getCsrf");
 
-Route::group(["prefix" => "/admin"], function () {
+Route::group(["prefix" => "/admin", "middleware" => ApiCsrf::class], function () {
 	Route::post("/login", "Api\\LoginApiController@login");
 });
