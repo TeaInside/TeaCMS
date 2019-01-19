@@ -26,7 +26,8 @@
             "bootstrap/helpers/helpers_a01.php"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Me\\": "thrid_party/"
         }
     },
     "autoload-dev": {

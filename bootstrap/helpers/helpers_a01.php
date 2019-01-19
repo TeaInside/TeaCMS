@@ -21,3 +21,27 @@ if (!function_exists("rstr")) {
 		return $r;
 	}
 }
+
+if (!function_exists("cencrypt")) {
+	/**
+	 * @param string $str
+	 * @param string $key
+	 * @return string $key
+	 */
+	function cencrypt(string $str, string $key): string
+	{
+		return \Me\Cencrypt::encrypt($str, $key);
+	}
+}
+
+if (!function_exists("dencrypt")) {
+	/**
+	 * @param string $str
+	 * @param string $key
+	 * @return string $key
+	 */
+	function dencrypt(string $str, string $key): string
+	{
+		return \Me\Cencrypt::decrypt($str, $key);
+	}
+}

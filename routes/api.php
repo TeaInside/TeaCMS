@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get("/get_token", "Api\\LoginApiController@getToken");
 Route::get("/get_csrf", "Api\\CsrfController@getCsrf");
+
+Route::group(["prefix" => "/admin"], function () {
+	Route::post("/login", "Api\\LoginApiController@login");
+});

@@ -1,4 +1,4 @@
-<?php
+1<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 64)->unique();
             $table->text('bio');
             $table->char('password', 60);
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
