@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 class LoginApiController extends Controller
 {
+	public $successStatus = 200;
+
     public function getToken(): JsonResponse
     {
     	return response()->json(
@@ -15,5 +17,10 @@ class LoginApiController extends Controller
     			"token" => rstr(32)
     		]
     	);
-    }
+	}
+	
+	public function postLogin(Request $request)
+	{
+		
+	}
 }
