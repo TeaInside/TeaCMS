@@ -14,6 +14,9 @@
 
         <!-- Custom styles for this template -->
         <link href="/css/signin.css" rel="stylesheet">
+
+        <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     </head>
 
     <body class="text-center">
@@ -33,6 +36,6 @@
             <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>
 
-        <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
+
     </body>
 </html>
