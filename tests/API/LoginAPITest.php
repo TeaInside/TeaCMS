@@ -44,9 +44,7 @@ class LoginAPITest extends TestCase
                         "_token" => $csrfToken
                     ]
                 ),
-                CURLOPT_HTTPHEADER => [
-                    "Accept: application/json"
-                ]
+                CURLOPT_HTTPHEADER => ["Accept: application/json"]
             ]
         );
         $o = json_decode($o["out"], true);
