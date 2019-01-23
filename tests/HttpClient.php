@@ -17,7 +17,7 @@ trait HttpClient
             $optf[$k] = $v;
         }
         unset($opt, $k, $v);
-        curl_setopt_array($ch, $opt);
+        curl_setopt_array($ch, $optf);
         $out = curl_exec($ch);
         $info = curl_getinfo($ch);
         $err = curl_error($ch);
