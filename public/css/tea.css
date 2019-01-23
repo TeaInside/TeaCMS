@@ -1,0 +1,42 @@
+:root {
+    --color-primary: #fa7268;
+    --color-primaryDark:#f95b4f;
+    --color-accent: #fabb68;
+    --color-warning: #f82d1e;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-grayBlack: #565656;
+    --color-livingPrimary: #fa6876;
+    --color-livingAccent: #fa8a68;
+}
+
+body {
+    /* background-color: var(--color-primary); */
+}
+
+/* colored element */
+.color_primary {
+    color: var(--color-primary)
+}
+
+.color_white {
+    color: var(--color-white)
+}
+
+.color_black {
+    color: var(--color-black)
+}
+
+.color_grayBlack {
+    color: var(--color-grayBlack)
+}
+
+/* letter spacing */
+.ls-1 {
+    letter-spacing: 0.1em;
+}
+
+/* login page css */
+.login_title {
+    font-size: 1.5em;
+}
